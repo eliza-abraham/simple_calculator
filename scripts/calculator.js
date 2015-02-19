@@ -61,6 +61,7 @@ var Calculator = function(){
       default:
         break;
     }
+    calc.operator = null
     return this.result
   }
 }

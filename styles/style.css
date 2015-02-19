@@ -3,12 +3,32 @@
 	margin-right: auto;
 }
 #calculator{
-	margin-left: auto;
-	margin-right: auto;
+  width: 290px;
+  margin-left: auto;
+  margin-right: auto;
+  border: steelblue solid 2px;
+  padding: 20px 10px 10px 20px;
 }
+
 #calc-screen{
 	text-align: right;
 	width: 245px;
+}
+
+.col-numbers, .col-ops{
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+}
+
+.col-numbers{
+  float: left;
+  width: 195px;
+  padding-right: 15px;
+}
+
+.col-ops{
+  float: right;
 }
 
 input.btn.btn-default.btn-lg {
