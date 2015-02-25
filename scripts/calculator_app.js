@@ -5,7 +5,7 @@ var app = app || {};
 
     init: function() {
       this.calculator = Object.create(calculator);
-      this.calcScreen = $('input#screen');
+      this.calcScreen = $('input#calc-screen');
       this.operand = $('.operand');
       this.operator = $('.operator');
       this.equals = $('.eual');
@@ -13,13 +13,12 @@ var app = app || {};
     },
 
     bindEvents: function() {
-      this.operand.on('click', this.appendToScreen);
-      this.operator.on('click', this.appendToScreen);
-      this.equals.on('click', this.compute)
+      this.operand.on('click', this.appendToScreen()));
+      this.operator.on('click', this.appendToScreen()));
+      this.equals.on('click', this.compute(this)))
     },
 
     appendToScreen: function(value) {
-      alert('hello');
       var string = this.calcScreen.val() + value;
       this.calcScreen.val(string);
     },
@@ -44,5 +43,5 @@ var app = app || {};
 })();
 
 $(document).ready(function(){
-  app.Calculator.init();
+  // app.Calculator.init();
 });
