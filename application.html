@@ -2,10 +2,9 @@
 	<head>
 		<title>Calculator in Pure JS</title>
 		<script src="scripts/jquery-2.1.3.min.js"></script>
+		<script src="scripts/bootstrap.min.js"></script>
 		<script src="scripts/calculator.js"></script>
-		<script src="scripts/dog_prototype.js"></script>
-		<script src="scripts/counter_closure.js"></script>
-		<script src="scripts/app_namespace.js"></script>
+		<script src="scripts/calculator_app.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
@@ -16,24 +15,22 @@
 		<div id='content' class="container">
 			<div id='calculator' class=''>
 				<form>
-					<div class='row'>
-	  					<div id='screen' class="form-group form-group-lg col-xs-3">
-							<input id='calc-screen' class='form-control' type='text' placeholder='0' >
-						</div>
+ 					<div id='screen' class="form-group form-group-lg">
+						<input id='calc-screen' class='form-control disable' type='text' value='0' placeholder='0' readonly>
 					</div>
-					<div class='form-group row'>
+					<div id='keys' class='form-group'>
 						<div id='numericals' class='col-numbers'>
-							<input class="btn btn-default btn-lg numerical" type="button" value="1">
-							<input class="btn btn-default btn-lg numerical" type="button" value="2">
-							<input class="btn btn-default btn-lg numerical" type="button" value="3">
-							<input class="btn btn-default btn-lg numerical" type="button" value="4">
-							<input class="btn btn-default btn-lg numerical" type="button" value="5">
-							<input class="btn btn-default btn-lg numerical" type="button" value="6">
-							<input class="btn btn-default btn-lg numerical" type="button" value="7">
-							<input class="btn btn-default btn-lg numerical" type="button" value="8">
-							<input class="btn btn-default btn-lg numerical" type="button" value="9">
-							<input id='clear' class="btn btn-default btn-lg numerical" type="button" value="C">
-							<input class="btn btn-default btn-lg numerical" type="button" value="0">
+							<input class="btn btn-default btn-lg operand" type="button" value="1">
+							<input class="btn btn-default btn-lg operand" type="button" value="2">
+							<input class="btn btn-default btn-lg operand" type="button" value="3">
+							<input class="btn btn-default btn-lg operand" type="button" value="4">
+							<input class="btn btn-default btn-lg operand" type="button" value="5">
+							<input class="btn btn-default btn-lg operand" type="button" value="6">
+							<input class="btn btn-default btn-lg operand" type="button" value="7">
+							<input class="btn btn-default btn-lg operand" type="button" value="8">
+							<input class="btn btn-default btn-lg operand" type="button" value="9">
+							<input id='clear' class="btn btn-default btn-lg" type="button" value="C">
+							<input class="btn btn-default btn-lg operand" type="button" value="0">
 							<input class="btn btn-default btn-lg equals" type="button" value="=">
 						</div>
 						<div id='operators' class='col-ops'>
@@ -42,6 +39,7 @@
 							<input class="btn btn-default btn-lg btn-block operator" type="button" value="*">
 							<input class="btn btn-default btn-lg btn-block operator" type="button" value="/">
 						</div>
+						<div class='clear'></div>
 					</div>
 				</form>
 			</div>

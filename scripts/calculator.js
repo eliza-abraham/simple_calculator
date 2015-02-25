@@ -1,68 +1,58 @@
-var Calculator = function(){
-  this.operand1 = 0
-  this.operand2 = 0
-  this.operator = null
-  this.result = 0;
+var calculator = {
+  result: null,
 
-  this.clear = function(){
-    this.operand1 = 0
-    this.operand2 = 0
-    this.operator = null
-    this.result = 0;
-  }
+  add: function(operands){
+    this.result = this.result || 0
+    for (var i = 0; i < operands.length; i++) {
+      this.result += operands[i];
+    }
+    return this.result;
+  },
 
-  this.show = function(){
-    console.log('this.operand1 = ' + this.operand1)
-    console.log('this.operand2 = ' + this.operand2)
-    console.log('this.operator = ' + this.operator)
-    console.log('this.result = ' + this.result)
-  }
+  sub: function(operands){
+    this.result = this.result || 0;
+    for (var i = 0; i < operands.length; i++) {
+      this.result -= operands[i];
+    }
+    return this.result;
+  },
 
-  // Make pvt
-  this.add = function(){
-    this.result = this.operand1 + this.operand2;
-  };
+  mul: function(operands){
+    this.result = this.result || 1;
+    for (var i = 0; i < operands.length; i++) {
+      this.result *= operands[i];
+    }
+    return this.result;
+  },
 
-  // Make pvt
-  this.sub = function(){
-    this.result = this.operand1 + this.operand2;
-  };
+  div: function(operands){
+    this.result = this.result || operands[0];
+    for (var i = 0; i < operands.length; i++) {
+      if (operands[i] != 0) { // div by 0
+        this.result = this.result / operands[i];
+      }
+    }
+    return this.result;
+  },
 
-  // Make pvt
-  this.mul = function(){
-    this.result = this.operand1 * this.operand2;
-  };
-
-  // Make pvt
-  this.div = function(){
-    this.result = this.operand1 / this.operand2;
-  };
-
-  this.calculate = function(){ //operand1, operand2, operator){
-    // this.operand1 = operand1 || this.operand1;
-    // this.operand2 = operand2 || this.operand2;
-    // this.operator = operator || this.operator;
-
-    console.log(this.operand1 + " " + this.operator + " " + this.operand2);
-
+  // TODO: use arguments instead of operands
+  calculate: function(operator, operands){
     switch (this.operator) {
-      case '+':
-        this.add();
+      case '+':s
+        this.add(operands);
         break;
       case '-':
-        this.sub();
+        this.sub(operands);
         break;
       case '*':
-        this.mul();
+        this.mul(operands);
         break;
       case '/':
-        this.div();
+        this.div(operands);
         break;
       default:
         break;
     }
-    calc.operator = null
     return this.result
   }
 }
-
